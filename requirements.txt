@@ -1,0 +1,16 @@
+numpy
+matplotlib
+scikit-learn
+seaborn
+pandas
+torch
+torchmetrics
+h5py
+cupy-cuda12x
+numba
+opencv-python
+tonic
+ninja
+argparse
+asteval
+
