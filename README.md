@@ -32,6 +32,13 @@ We provide reference code for event-based gesture recognition using SNNs (DVSGes
 
 Additionally, we provide links to a collection of relevant papers:
 
+- EV-Gait: Event-based Robust Gait Recognition using Dynamic Vision Sensors
+- Event-Stream Representation for Human Gaits Identification Using Deep Neural Networks
+- EEvAct: Early Event-Based Action Recognition with High-Rate Two-Stream Spiking Neural Networks
+- Efficient recurrent architectures through activity sparsity and sparse back-propagation through time
+- Were RNNs All We Needed?
+- NeuroBench: A Framework for Benchmarking Neuromorphic Computing Algorithms and Systems
+
 
 ## DVS128-Gait DATASET
 

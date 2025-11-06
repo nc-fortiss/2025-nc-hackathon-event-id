@@ -65,7 +65,7 @@ if __name__ == '__main__':
     sample_length = 1000
     ds_factor = 1
     data_directory = os.path.join(rootPath, '../data/dvs_gesture_bs2')
-    data_directory = '/mnt/nas02nc/datasets/DVS_Gesture/dvs_gesture_bs2'
+    #data_directory = '/mnt/nas02nc/datasets/DVS_Gesture/dvs_gesture_bs2'
     training_set = DVSGestureDataset(path=data_directory, sampling_time=sampling_time, sample_length=sample_length,
                                      train=True, random_shift=False, ds_factor=ds_factor)
     testing_set = DVSGestureDataset(path=data_directory, sampling_time=sampling_time, sample_length=sample_length,
