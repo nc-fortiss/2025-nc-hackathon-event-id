@@ -12,12 +12,15 @@ Python requirements are listed in requirements.txt.
 5. Install requirements: `pip install -r requirements.txt`
 
 Additional libraries.
+
 6. Copy nc-libs from USB-Drive or provided laptop
 
 DVS-Gait Dataset.
+
 7. Copy DVS128-Gait-DATASET from USB-Drive or provided laptop
 
 Optionally, DVSGesture Dataset
+
 8. Copy DVSGesture Dataset from USB-Drive or provided laptop
 
 
