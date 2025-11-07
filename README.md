@@ -51,7 +51,7 @@ For each lighting condition, we recruited  20 volunteers to contribute their dat
 
 ## Run EV-GAIT-IMG
 
-- Generate the image-like representation
+- Generate the image-like representationl
 
   ```
   cd EV-Gait-IMG

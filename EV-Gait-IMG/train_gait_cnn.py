@@ -8,7 +8,10 @@ import argparse
 import os
 import sys
 import torch.nn.functional as F
-sys.path.append("..")
+#sys.path.append("..")
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 from config import Config
 
 
