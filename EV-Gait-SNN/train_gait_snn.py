@@ -45,6 +45,7 @@ if __name__ == '__main__':
     parser.add_argument('--sampling_time', type=int, default=20_000, help='Sampling time for DVS data')
     parser.add_argument('--sample_length', type=int, default=4_000_000, help='Sample length for DVS data')
     parser.add_argument('--ce_loss', type=bool, help='Use cross-entropy loss')
+    parser.add_argument('--day', type=bool, default=True, help='Use day time dataset if True, else night time dataset')
     args = parser.parse_args()
 
     timestamp = datetime.datetime.now().isoformat()
@@ -81,7 +82,11 @@ if __name__ == '__main__':
     sampling_time = args.sampling_time
     sample_length = args.sample_length
     ds_factor = 1 
-    data_directory = os.path.join(Config.events_file)
+
+    if args.day == True:
+        data_directory = os.path.join(Config.events_file)
+    else:
+        data_directory = os.path.join(Config.events_file_night)
 
     training_set = DVSGaitDataset(path=data_directory, sampling_time=sampling_time, sample_length=sample_length,
                                      train=True, random_shift=False, ds_factor=ds_factor, transform="all")
@@ -156,7 +161,7 @@ if __name__ == '__main__':
             for i, (inp, label) in enumerate(test_loader):  # testing loop
                 #output, count = assistant.test_simclr(inp, label)
                 output = assistant.test(inp, label)
-                # stats.print(epoch, iter=i, dataloader=test_loader)
+                stats.print(epoch, iter=i, dataloader=test_loader)
 
             stats.update()
             stats.save(trained_folder + '/')
