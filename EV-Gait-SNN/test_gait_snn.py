@@ -77,8 +77,8 @@ if __name__ == '__main__':
     testing_set = DVSGaitDataset(path=data_directory, sampling_time=sampling_time, sample_length=sample_length,
                                     train=False, random_shift=False, ds_factor=ds_factor, transform=None)
     
-    #testing_set = [testing_set[i] for i in range(0, 10*50, 50)]  # use 20% of test data for quick evaluation
-    batch_size = 1
+    
+    batch_size = 2
 
     train_loader = DataLoader(dataset=training_set, batch_size=batch_size, shuffle=True, num_workers=0)
     test_loader = DataLoader(dataset=testing_set, batch_size=batch_size, shuffle=False, num_workers=0)
@@ -136,27 +136,21 @@ if __name__ == '__main__':
                 print('plotting')
                 
                 
-    network_path = "C:/hackathon/2025-nc-hackathon-event-id_fortiss/EV-Gait-SNN/trained_models/Trained_plif_snn_2025-11-10T12.20.03.478367/network.pt"
+    
     spike, lab = training_set[0]
     spike = spike.to(device)
     output = net(spike.unsqueeze(0))
-    # net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
-    net.load_state_dict(torch.load(network_path, map_location=device))
+    net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
     print(net)
     
     # evaluate
     # finetune_folder = trained_folder + '/finetuned_lavadl'
     # trained_folder = finetune_folder
     # os.makedirs(finetune_folder, exist_ok=True)
-    # net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
-    net.load_state_dict(torch.load(network_path, map_location=device))
-    print("computing train accuracy...")
-    #for i, (inp, label) in enumerate(train_loader):  # testing loop
-    #    print(f"batch {i}/{len(train_loader)}")
-    #    output, count = assistant.valid(inp, label)
-    print("computing test accuracy...")
+    net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
+    for i, (inp, label) in enumerate(train_loader):  # testing loop
+        output, count = assistant.valid(inp, label)
     for i, (inp, label) in enumerate(test_loader):  # testing loop
-        print(f"batch {i}/{len(test_loader)}")
         output, count = assistant.test(inp, label)
     print(stats.validation.accuracy, stats.testing.accuracy)
     stats.validation.reset() #update()
