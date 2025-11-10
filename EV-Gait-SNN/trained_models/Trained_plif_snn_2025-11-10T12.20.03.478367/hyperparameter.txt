@@ -1,0 +1,10 @@
+--device cuda
+--batch_size 2
+--learning_rate 0.001
+--epochs 15
+--sampling_time 20000
+--sample_length 4000000
+--ce_los False
+
+dropout 0.1
+PLIFSNN decay_inp True
