@@ -203,6 +203,8 @@ class Assistant:
                 self.stats.testing.num_samples += input.shape[0]
                 self.stats.testing.loss_sum += loss.cpu().data.item() \
                                                * output.shape[0]
+                print( self.classifier(output))
+                print(target)
                 if self.classifier is not None:  # classification
                     if k is None:
                         self.stats.testing.correct_samples += torch.sum(
@@ -214,6 +216,8 @@ class Assistant:
                         correct_samples = []
                         for j in k:
                             pred = self.classifier(output, j).t()
+                            print(target)
+                            print(pred)
                             correct = pred.eq(target.expand_as(pred))
                             correct_samples.append(torch.sum(correct).cpu())
                         correct_samples = torch.stack(correct_samples)

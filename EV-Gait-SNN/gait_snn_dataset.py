@@ -113,25 +113,28 @@ class DVSGaitDataset(Dataset):
             self, path=dataPath,
             train=True, classes=20,
             sampling_time=1, sample_length=1450,
-            transform=None, random_shift=True, ds_factor=1, lava=False,
+            transform=None, random_shift=True, ds_factor=1, lava=False, day=True
     ):
         super(DVSGaitDataset, self).__init__()
         self.path = path
-        hdf = h5py.File(Config.events_file, 'r')
-        if train:
+
+        hdf = h5py.File(path, 'r')
+        if train and day:
             train_keys = [key for key in hdf.keys() if "train" in key]
             train_person = [int(key.replace("train (1)_","").replace(".txt", "").split("_")[0]) for key in train_keys]
             train_num_sample = [int(key.replace("train (1)_","").replace(".txt", "").split("_")[1]) for key in train_keys]
             data_train = itemgetter(*train_keys)(hdf)
             self.labels = train_person
             self.data = data_train
-        else:
+        elif day:
             test_keys = [key for key in hdf.keys() if "test" in key]
             test_person = [int(key.replace("test (1)_","").replace(".txt", "").split("_")[0]) for key in test_keys]
             test_num_sample = [int(key.replace("test (1)_","").replace(".txt", "").split("_")[1]) for key in test_keys]
             data_test = itemgetter(*test_keys)(hdf)
             self.labels = test_person
             self.data = data_test
+        elif not day:
+            assert False
         self.sampling_time = sampling_time
         self.num_time_bins = int(sample_length / sampling_time)
         self.transform = transform
