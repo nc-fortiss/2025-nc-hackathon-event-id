@@ -96,7 +96,7 @@ def fuse_bn(module):
     
     
 class PLIFSNN(torch.nn.Module):
-    def __init__(self, inp_features=2, channels=8, feat_neur=512, classes=12, delay=False, dropout=0.05, quantize=False, device=None):
+    def __init__(self, inp_features=2, channels=8, feat_neur=512, classes=12, delay=False, dropout=0.05, quantize=False, ce_loss=False, device=None):
         super(PLIFSNN, self).__init__()
 
         self.v_reset = 0.0  # 0.0 # None
@@ -135,8 +135,7 @@ class PLIFSNN(torch.nn.Module):
             neuron.ParametricLIFNode(surrogate_function=surrogate.ATan(), detach_reset=True, v_reset=self.v_reset,
                                      decay_input=self.decay_inp, init_tau=self.init_tau),
             layer.Linear(feat_neur, classes, bias=self.bias),
-            neuron.ParametricLIFNode(surrogate_function=surrogate.ATan(),detach_reset=True, v_reset=self.v_reset,
-                                    decay_input=self.decay_inp, init_tau=self.init_tau),
+            neuron.ParametricLIFNode(surrogate_function=surrogate.ATan(),detach_reset=True, v_reset=self.v_reset, decay_input=self.decay_inp, init_tau=self.init_tau) if not ce_loss else nn.Identity(),
         ])
 
         for m in self.modules():
