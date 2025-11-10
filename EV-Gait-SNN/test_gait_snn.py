@@ -18,7 +18,7 @@ rootPath = os.path.split(curPath)[0]
 sys.path.append(rootPath)
 from config import Config
 
-# lavadlPath = os.path.join(rootPath, '../nc-libs/lava-dl/src')
+lavadlPath = os.path.join(rootPath, '../nc-libs/lava-dl/src')
 sys.path.insert(0, lavadlPath)
 import lava.lib.dl.slayer as slayer
 
@@ -136,20 +136,18 @@ if __name__ == '__main__':
                 print('plotting')
                 
                 
-    network_path = "D:/Mirror/LMU/Semester 1/NeuroTUM/Munich Neuromorphic Hackathon/Simi/dev_tree/2025-nc-hackathon-event-id/EV-Gait-SNN/trained_models/Trained_plif_snn_2025-11-10T12.20.03.478367/network.pt"
+    
     spike, lab = training_set[0]
     spike = spike.to(device)
     output = net(spike.unsqueeze(0))
-    # net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
-    net.load_state_dict(torch.load(network_path, map_location=device))
+    net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
     print(net)
     
     # evaluate
     # finetune_folder = trained_folder + '/finetuned_lavadl'
     # trained_folder = finetune_folder
     # os.makedirs(finetune_folder, exist_ok=True)
-    # net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
-    net.load_state_dict(torch.load(network_path, map_location=device))
+    net.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
     for i, (inp, label) in enumerate(train_loader):  # testing loop
         output, count = assistant.valid(inp, label)
     for i, (inp, label) in enumerate(test_loader):  # testing loop
