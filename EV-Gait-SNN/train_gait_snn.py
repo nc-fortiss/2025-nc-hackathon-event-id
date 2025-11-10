@@ -98,7 +98,7 @@ if __name__ == '__main__':
         error = calc_ce_loss
         classifier = mean_classifier
     else:
-        error = slayer.loss.SpikeRateLoss(true_rate=0.5, false_rate=0.03, reduction='sum').to(device)
+        error = slayer.loss.SpikeRate(true_rate=0.5, false_rate=0.03, reduction='sum').to(device)
         classifier = slayer.classifier.Rate.predict
     extr_loss = None  
     lam = None 
