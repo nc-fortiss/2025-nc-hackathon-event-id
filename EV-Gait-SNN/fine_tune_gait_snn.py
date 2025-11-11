@@ -79,8 +79,8 @@ if __name__ == '__main__':
     # one GPU
     net = PLIFSNN(inp_features, channels, feat_neur, classes, delay, dropout, quantize, args.ce_loss, device).to(device)
     net.load_state_dict(torch.load("trained_models/good_model" + '/network.pt', map_location=device))
-    net.blocks[-2] = layer.Linear(feat_neur, classes_new, bias=True)
-    net.blocks[-1] = neuron.ParametricLIFNode(surrogate_function=surrogate.ATan(),detach_reset=True, v_reset=0.0, decay_input=True, init_tau=2.0)
+    net.blocks[-2] = layer.Linear(feat_neur, classes_new, bias=True).to(device)
+    net.blocks[-1] = neuron.ParametricLIFNode(surrogate_function=surrogate.ATan(),detach_reset=True, v_reset=0.0, decay_input=True, init_tau=2.0).to(device)
 
     print(net)
 
