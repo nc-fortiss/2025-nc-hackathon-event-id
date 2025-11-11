@@ -5,6 +5,7 @@ class Config():
     rootPath = os.path.split(curPath)[0]
     downsample_dir = os.path.join(rootPath, '../data/DVS128-Gait-DATASET/DVS128-Gait-Day/downsample')
     data_dir = os.path.join(rootPath, '../data/DVS128-Gait-DATASET/DVS128-Gait-Day')
+    data_dir_night = os.path.join(rootPath, '../data/DVS128-Gait-DATASET/DVS128-Gait-Night')
 
     graph_dir = os.path.join(data_dir, 'graph')
     graph_train_dir = os.path.join(graph_dir, 'train')
@@ -24,3 +25,5 @@ class Config():
     
     events_dir = os.path.join(data_dir, 'events')
     events_file = os.path.join(events_dir, 'raw_events.hdf5')
+    events_file_night = os.path.join(data_dir_night, 'raw_events.hdf5')
+    gntm_event_file = os.path.join(rootPath, '../data/gntm')

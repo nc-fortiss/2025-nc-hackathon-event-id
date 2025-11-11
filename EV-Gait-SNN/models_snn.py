@@ -93,6 +93,17 @@ def fuse_bn(module):
         del module
 
     return module_output
+
+class TemporalMean(nn.Module):
+    def __init__(self, dim=0):
+        super().__init__()
+        self.dim = dim
+    def forward(self, x):
+        print(x.shape)
+        x = x.mean(dim=0)
+        print(x.shape)
+        return x
+        return x.mean(dim=-1)
     
     
 class PLIFSNN(torch.nn.Module):
