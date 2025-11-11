@@ -67,8 +67,11 @@ if __name__ == '__main__':
     delay = False
     dropout = 0.2
     quantize = False 
-    # one GPU
+    # one GPU (Choose your SNN Model Architecture)
     net = PLIFSNN(inp_features, channels, feat_neur, classes, delay, dropout, quantize, args.ce_loss, device).to(device)
+    # net = PLIFSNN_MinEGRU(inp_features, channels, feat_neur, classes, delay, dropout, quantize, args.ce_loss, device).to(device)
+    # net = PLIFSNN_EGRU(inp_features, channels, feat_neur, classes, delay, dropout, quantize, args.ce_loss, device).to(
+    #     device)
     print(net)
 
     # parameters count

@@ -153,6 +153,7 @@ class SpikeFunction(torch.autograd.Function):
         objects for use in the backward pass using the ctx.save_for_backward method.
         """
         ctx.save_for_backward(inp, dampening_factor, pseudo_derivative_support)
+        # return (inp > 0).float() # gpu solution for macOS GPU training
         return torch.heaviside(inp, inp)
 
     @staticmethod
