@@ -170,7 +170,7 @@ class Assistant:
             spike count if ``count_log`` is enabled
 
         """
-        self.net.eval()
+        self.net.eval() # comment this when train for GRU model based
 
         if self.device is None:
             for p in self.net.parameters():
