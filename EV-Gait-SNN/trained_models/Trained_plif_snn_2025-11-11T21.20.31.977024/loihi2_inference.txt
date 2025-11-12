@@ -1,0 +1,278 @@
+Microsoft Windows [Version 10.0.19045.6466]
+rsion 10.0.19045.6466tion. All rights reserved.
+]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\Mirror\LMU\Semester 1\NeuroTUM\Munich Neuromorphic Hackathon\Simi\dev_tree\2025-nc-hackathon-event-id>"D:/Mirror/LMU/Semester 1/NeuroTUM/Munich Neuromorphic Hackathon/Simi/dev_tree/2025-nc-hackathon-event-id/.venv/Scripts/activate.bat"
+
+(.venv) D:\Mirror\LMU\Semester 1\NeuroTUM\Munich Neuromorphic Hackathon\Simi\dev_tree\2025-nc-hackathon-event-id>"D:/Mirror/LMU/Semester 1/NeuroTUM/Munich Neuromorphic Hackathon/Simi/dev_tree/2025-nc-hackathon-event-id/.venv/Scripts/python.exe" "d:/Mirror/LMU/Semester 1/NeuroTUM/Munich Neuromorphic Hackathon/Simi/dev_tree/2025-nc-hackathon-event-id/EV-Gait-SNN/loihi2_inference.py"
+start
+Loihi2 compiler is not available in this system. This tutorial will execute on CPU backend.
+make training set
+done training set
+d:\Mirror\LMU\Semester 1\NeuroTUM\Munich Neuromorphic Hackathon\Simi\dev_tree\2025-nc-hackathon-event-id\EV-Gait-SNN\gait_snn_dataset.py:218: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  reprs = torch.tensor(reprs, dtype=torch.float)
+torch.Size([2, 128, 128, 200])
+[2, 128, 128]
+WARNING:root:Trying to set the step mode for PLIFSNN(
+  (blocks): ModuleList(
+    (0): Conv2d(2, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=s)
+    (1): BatchNorm2d(8, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=s)
+    (2): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (3): Dropout(p=0.2)
+    (4): Conv2d(8, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=s)
+    (5): BatchNorm2d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=s)
+    (6): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (7): Dropout(p=0.2)
+    (8): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=s)
+    (9): BatchNorm2d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=s)
+    (10): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (11): Dropout(p=0.2)
+    (12): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=s)
+    (13): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=s)
+    (14): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (15): Dropout(p=0.2)
+    (16): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=s)
+    (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=s)
+    (18): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (19): Flatten(start_dim=1, end_dim=-1, step_mode=s)
+    (20): Linear(in_features=2048, out_features=512, bias=False)
+    (21): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (22): Linear(in_features=512, out_features=20, bias=False)
+    (23): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=s, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+  )
+), which is not spikingjelly.activation_based.base.StepModule
+PLIFSNN(
+  (blocks): ModuleList(
+    (0): Conv2d(2, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=m)
+    (1): BatchNorm2d(8, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=m)
+    (2): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (3): Dropout(p=0.2)
+    (4): Conv2d(8, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=m)
+    (5): BatchNorm2d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=m)
+    (6): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (7): Dropout(p=0.2)
+    (8): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=m)
+    (9): BatchNorm2d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=m)
+    (10): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (11): Dropout(p=0.2)
+    (12): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=m)
+    (13): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=m)
+    (14): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (15): Dropout(p=0.2)
+    (16): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False, step_mode=m)
+    (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True, step_mode=m)
+    (18): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (19): Flatten(start_dim=1, end_dim=-1, step_mode=m)
+    (20): Linear(in_features=2048, out_features=512, bias=False)
+    (21): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (22): Linear(in_features=512, out_features=20, bias=False)
+    (23): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+  )
+)
+d:/Mirror/LMU/Semester 1/NeuroTUM/Munich Neuromorphic Hackathon/Simi/dev_tree/2025-nc-hackathon-event-id/EV-Gait-SNN/loihi2_inference.py:112: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  net_torch.load_state_dict(torch.load(trained_folder + '/network.pt', map_location=device))
+[[65.  6.  8.  5.  6.  6.  7.  8.  6.  8. 23.  5.  4. 12.  5.  5.  6.  5.
+   6.  5.]]
+0
+[nn.ModuleList] fusing BN and dropout
+ModuleList(
+  (0): Conv2d(2, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), step_mode=m)
+  (1): Identity()
+  (2): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=14.271428108215332
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (3): Dropout(p=0.2)
+  (4): Conv2d(8, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), step_mode=m)
+  (5): Identity()
+  (6): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=21.076833724975586
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (7): Dropout(p=0.2)
+  (8): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), step_mode=m)
+  (9): Identity()
+  (10): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=17.18735694885254
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (11): Dropout(p=0.2)
+  (12): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), step_mode=m)
+  (13): Identity()
+  (14): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=4.896819591522217
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (15): Dropout(p=0.2)
+  (16): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), step_mode=m)
+  (17): Identity()
+  (18): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=11.468113899230957
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (19): Flatten(start_dim=1, end_dim=-1, step_mode=m)
+  (20): Linear(in_features=2048, out_features=512, bias=False)
+  (21): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=23.070972442626953
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+  (22): Linear(in_features=512, out_features=20, bias=False)
+  (23): ParametricLIFNode(
+    v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=torch, tau=3.6668152809143066
+    (surrogate_function): ATan(alpha=2.0, spiking=True)
+  )
+)
+ModuleList(
+  (0): Conv(
+    (neuron): Neuron()
+    (synapse): Conv(2, 8, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+  )
+  (1): Conv(
+    (neuron): Neuron()
+    (synapse): Conv(8, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+  )
+  (2): Conv(
+    (neuron): Neuron()
+    (synapse): Conv(16, 32, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+  )
+  (3): Conv(
+    (neuron): Neuron()
+    (synapse): Conv(32, 64, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+  )
+  (4): Conv(
+    (neuron): Neuron()
+    (synapse): Conv(64, 128, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+  )
+  (5): Flatten()
+  (6): Dense(
+    (neuron): Neuron()
+    (synapse): Dense(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+  )
+  (7): Dense(
+    (neuron): Neuron()
+    (synapse): Dense(512, 20, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+  )
+)
+[78.  5.  5.  6.  6.  5. 11.  7.  5.  7.  5.  5.  5.  4.  6.  6.  7.  5.
+  5.  5.]
+0
+Bias:  Parameter containing:
+tensor([ 0.1486, -0.0560,  0.1078,  0.1464,  0.1669,  0.1490,  0.1489, -0.0374],
+       requires_grad=True)
+Bias:  Parameter containing:
+tensor([ 0.3659,  0.2483,  0.1630,  0.4910,  0.4258,  0.2683,  0.4774,  0.4554,
+        -0.1200,  0.5754,  0.3629,  0.4468,  0.1297,  0.2426, -0.2082, -0.3246],
+       requires_grad=True)
+Bias:  Parameter containing:
+tensor([ 0.1177,  0.1535,  0.3943,  0.2590,  0.9699,  0.3440,  0.5658,  0.2817,
+        -0.5626, -0.7030, -0.4955,  0.2415,  0.4555, -0.7907, -0.6877, -0.4311,
+        -0.4376,  0.2926, -1.1799,  0.5068,  0.0990,  0.3268,  0.2862, -0.4391,
+         0.4463,  0.5779,  0.7477,  1.1074,  0.4896, -0.7964,  0.4030, -0.9451],
+       requires_grad=True)
+Bias:  Parameter containing:
+tensor([-0.5450,  0.1192, -0.4544, -0.0467, -0.9089, -0.3055, -0.1460,  0.0027,
+        -0.1297, -0.1052, -0.4249, -0.8152, -0.1433, -0.0955, -0.3151,  0.5540,
+        -0.6676, -0.5417, -0.5623, -0.2937,  0.1441,  0.1834, -0.3727,  0.4670,
+        -0.3360, -0.5814, -0.0804, -0.3874, -0.1417, -0.4928,  0.1257,  0.4014,
+        -0.3767, -0.4380,  0.0311, -0.9517, -0.4241,  0.0941, -0.0183, -0.0576,
+        -0.5749, -0.8303, -0.1342, -0.2043,  0.1451, -0.2525,  0.0618, -0.2874,
+         0.3442, -0.7396, -0.2875,  0.0788, -0.0059, -0.0227,  0.0895,  0.1328,
+        -0.0633, -0.1143, -0.2294, -0.5056,  0.0875, -0.1634,  0.2180, -0.4587],
+       requires_grad=True)
+Bias:  Parameter containing:
+tensor([ 0.4899, -1.1587, -0.6401, -0.3511, -0.7591, -0.1974, -0.2107, -1.2234,
+        -0.7476, -0.7941, -0.5335, -1.0263, -1.0585, -0.8099, -0.8967, -1.6265,
+         0.9305, -0.4606, -0.5071, -0.3697, -0.5866, -0.6623, -1.1461, -0.7644,
+        -1.0319,  0.1348, -0.8912, -0.1889, -0.7248, -0.8303, -0.3569, -0.7564,
+        -1.1416, -0.8410, -1.1464, -0.7150, -0.9792, -0.8810, -0.1320, -1.1906,
+        -0.3141, -0.3454, -0.3332, -0.5718, -0.4634, -0.8363, -1.5674, -0.7504,
+        -0.4054, -0.0572, -0.5505, -0.2831, -0.7635, -0.4813, -0.7887, -1.3514,
+        -0.3155, -0.6783, -0.9416, -0.5533, -0.5525,  0.0315,  0.2091, -0.2844,
+        -0.6424, -0.4685, -0.1569, -0.3754, -0.7270,  0.7804, -0.5864, -0.3822,
+        -0.1490, -1.2289, -1.4266, -0.5884, -0.5522, -0.3320, -1.2705, -0.7985,
+        -0.4414, -0.2139,  0.4341, -0.7591, -0.8324, -0.3407, -0.6878, -0.5233,
+        -1.0342, -0.6783, -0.7632, -0.5151, -1.1557, -0.5131, -0.4488, -0.8399,
+        -0.1948, -1.2894, -0.2086, -0.1684, -0.5917, -0.6656, -0.3924, -0.9557,
+        -1.1859, -0.1293,  1.3307, -1.6570,  0.9591, -0.7238, -1.1208, -0.3829,
+        -1.2568, -0.3167,  0.2802, -0.5734, -0.1982, -1.0348, -1.2356, -0.1902,
+        -0.1780, -0.5945, -1.1618, -1.0998, -1.2522, -0.7671, -0.8901, -0.4129],
+       requires_grad=True)
+[ 609 -229  442  600  684  610  610 -153]
+[ 1499  1017   668  2011  1744  1099  1956  1865  -492  2357  1487  1830
+   531   994  -853 -1330]
+[  482   629  1615  1061  3973  1409  2317  1154 -2304 -2880 -2029   989
+  1866 -3239 -2817 -1766 -1792  1199 -4833  2076   405  1339  1172 -1799
+  1828  2367  3062  4536  2006 -3262  1651 -3871]
+[-2232   488 -1861  -191 -3723 -1251  -598    11  -531  -431 -1740 -3339
+  -587  -391 -1291  2269 -2734 -2219 -2303 -1203   590   751 -1527  1913
+ -1376 -2381  -329 -1587  -580 -2019   515  1644 -1543 -1794   127 -3898
+ -1737   385   -75  -236 -2355 -3401  -550  -837   594 -1034   253 -1177
+  1410 -3030 -1178   323   -24   -93   366   544  -259  -468  -940 -2071
+   358  -669   893 -1879]
+[ 2006 -4746 -2622 -1438 -3109  -808  -863 -5011 -3062 -3253 -2185 -4204
+ -4336 -3317 -3673 -6662  3812 -1887 -2077 -1514 -2403 -2713 -4694 -3131
+ -4227   552 -3650  -774 -2969 -3401 -1462 -3098 -4676 -3445 -4696 -2929
+ -4011 -3608  -541 -4876 -1287 -1415 -1365 -2342 -1898 -3425 -6420 -3074
+ -1661  -234 -2255 -1159 -3127 -1971 -3231 -5535 -1292 -2778 -3857 -2266
+ -2263   129   856 -1165 -2631 -1919  -643 -1538 -2978  3197 -2402 -1566
+  -610 -5034 -5843 -2410 -2262 -1360 -5204 -3271 -1808  -876  1778 -3109
+ -3409 -1396 -2817 -2144 -4236 -2778 -3126 -2110 -4734 -2101 -1838 -3440
+  -798 -5281  -854  -690 -2424 -2726 -1607 -3915 -4858  -530  5451 -6787
+  3928 -2965 -4591 -1568 -5148 -1297  1148 -2349  -812 -4238 -5061  -779
+  -729 -2435 -4759 -4505 -5129 -3142 -3646 -1691]
+(128, 128, 2)
+|   Type   |  W  |  H  |  C  | ker | str | pad | dil | grp |delay|
+|Conv      |   64|   64|    8| 3, 3| 2, 2| 1, 1| 1, 1|    1|False|
+|Conv      |   32|   32|   16| 3, 3| 2, 2| 1, 1| 1, 1|    1|False|
+|Conv      |   16|   16|   32| 3, 3| 2, 2| 1, 1| 1, 1|    1|False|
+|Conv      |    8|    8|   64| 3, 3| 2, 2| 1, 1| 1, 1|    1|False|
+|Conv      |    4|    4|  128| 3, 3| 2, 2| 1, 1| 1, 1|    1|False|
+|Dense     |    1|    1|  512|     |     |     |     |     |False|
+|Dense     |    1|    1|   20|     |     |     |     |     |False|
+(20, 201)
+[73.  5.  7.  6.  5.  6. 10.  6.  5.  7.  6.  5.  5.  5.  5.  6.  7.  5.
+  5.  5.]
+0
