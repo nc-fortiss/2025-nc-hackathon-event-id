@@ -106,7 +106,7 @@ if __name__ == '__main__':
     batch_size = args.batch_size
 
     train_loader = DataLoader(dataset=training_set, batch_size=batch_size, shuffle=True, num_workers=0)
-    test_loader = DataLoader(dataset=testing_set, batch_size=batch_size, shuffle=False, num_workers=0)
+    test_loader = DataLoader(dataset=testing_set, batch_size=batch_size, shuffle=True, num_workers=0)
 
     # select loss function
     if args.ce_loss:

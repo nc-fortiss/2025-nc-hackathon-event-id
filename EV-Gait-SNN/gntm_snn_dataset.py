@@ -192,6 +192,7 @@ class GNTMGaitDataset(Dataset):
         else:
             self.data = [self.data[i] for i in range(len(self.data)) if not train_mask[i]]
             self.labels = [self.labels[i] for i in range(len(self.labels)) if not train_mask[i]]
+        
         self.sampling_time = sampling_time
         self.num_time_bins = int(sample_length / sampling_time)
         self.transform = transform
